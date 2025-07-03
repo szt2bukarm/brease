@@ -1,26 +1,111 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "abc-diatype-bold";
+  src: url("/fonts/abc-diatype-bold.otf");
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: "abc-diatype-regular";
+  src: url("/fonts/abc-diatype-regular.otf");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "abc-diatype-medium";
+  src: url("/fonts/abc-diatype-medium.otf");
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+body{
+  overflow-x: hidden;
 }
+
+@theme {
+  --color-primary: #005244;
+  --color-background: #f2f2f2;
+  --color-purple: #D8ABFF;
+  --color-showcaseborder: #DEDEDE;
+  --color-sublabel: #8B8B8B;
+  --color-heading: #121212;
+  --color-subtext: #616161;
+
+  --font-abc-diatype-bold: "abc-diatype-bold";
+  --font-abc-diatype-regular: "abc-diatype-regular";
+  --font-abc-diatype-medium: "abc-diatype-medium";
+
+  --breakpoint-xl: 1930px;
+  --breakpoint-lg: 1440px;
+  --breakpoint-md: 924px;
+
+  --rounded-md: 12px;
+
+  /* desktop */
+  --text-h6-desktop: 20px;
+  --text-h5-desktop: 24px;
+  --text-h4-desktop: 32px;
+  --text-h3-desktop: 48px;
+  --text-h2-desktop: 56px;
+  --text-h1-desktop: 80px;
+  --text-xs-desktop: 12px;
+  --text-sm-desktop: 14px;
+  --text-md-desktop: 16px;
+  --text-lg-desktop: 20px;
+
+  --leading-h6-desktop: 24px;
+  --leading-h5-desktop: 32px;
+  --leading-h4-desktop: 40px;
+  --leading-h3-desktop: 52px;
+  --leading-h2-desktop: 56px;
+  --leading-h1-desktop: 88px;
+  --leading-sm-desktop: 20px
+  --leading-md-desktop: 24px;
+  --leading-lg-desktop: 32px;
+
+  /* tablet */
+  --text-h6-tablet: 14px;
+  --text-h5-tablet: 24px;
+  --text-h4-tablet: 24px;
+  --text-h3-tablet: 40px;
+  --text-h2-tablet: 40px;
+  --text-h1-tablet: 64px;
+  --text-xs-tablet: 12px;
+  --text-sm-tablet: 14px;
+  --text-md-tablet: 16px;
+  --text-lg-tablet: 16px;
+
+  --leading-h6-tablet: 24px;
+  --leading-h5-tablet: 32px;
+  --leading-h4-tablet: 40px;
+  --leading-h3-tablet: 52px;
+  --leading-h2-tablet: 48px;
+  --leading-h1-tablet: 72px;
+  --leading-sm-tablet: 20px
+  --leading-md-tablet: 24px;
+  --leading-lg-tablet: 32px;
+
+  /* mobile */
+  --text-h6-mobile: 14px;
+  --text-h5-mobile: 20px;
+  --text-h4-mobile: 24px;
+  --text-h3-mobile: 32px;
+  --text-h2-mobile: 40px;
+  --text-h1-mobile: 48px;
+  --text-xs-mobile: 12px;
+  --text-sm-mobile: 14px;
+  --text-md-mobile: 16px;
+  --text-lg-mobile: 16px;
+
+  --leading-h6-mobile: 24px;
+  --leading-h5-mobile: 32px;
+  --leading-h4-mobile: 32px;
+  --leading-h3-mobile: 44px;
+  --leading-h2-mobile: 40px;
+  --leading-h1-mobile: 48px;
+  --leading-sm-mobile: 20px;
+  --leading-md-mobile: 24px;
+  --leading-lg-mobile: 32px;
+
+}
+
+  
+
+
