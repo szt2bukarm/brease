@@ -8,9 +8,12 @@ import Fullstack from "@/components/fullstack/Fullstack";
 import FeatureRequest from "@/components/featurerequest/FeatureRequest";
 import Showcase from "@/components/showcase/Showcase";
 import JoinBeta from "@/components/joinbeta/JoinBeta";
+import BreaseKit from "@/components/breasekit/BreaseKit";
+import Footer from "@/components/footer/Footer";
 
 export default function Home() {
   return (
+    <>
     <main>
       <Hero />
       <BothWorlds />
@@ -20,6 +23,9 @@ export default function Home() {
       <FeatureRequest />
       <Showcase />
       <JoinBeta />
+      <BreaseKit />
     </main>
+    <Footer />
+    </>
   );
 }

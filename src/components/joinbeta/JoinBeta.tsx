@@ -1,4 +1,7 @@
+"use client"
 import Button from "../common/Button";
+import Heading from "../common/Heading";
+
 
 export default function JoinBeta() {
     return (
@@ -12,18 +15,18 @@ export default function JoinBeta() {
                 <div className="flex flex-col min-h-full">
 
                     <div>
-                        <p className="font-abc-diatype-medium text-xs-mobile md:text-xs-tablet lg:text-xs-desktop mb-[16px] text-sublabel">JOIN THE BREASE BETA PROGRAM</p>
-                        <p className="text-h2-mobile leading-h2-mobile md:text-h2-tablet md:leading-h2-tablet lg:text-h2-desktop lg:leading-h2-desktop text-heading tracking-[-1px]">Get a full year of Brease — free.</p>
+                        <p className="font-abc-diatype-bold text-xs-mobile md:text-xs-tablet lg:text-xs-desktop mb-[16px] text-sublabel">JOIN THE BREASE BETA PROGRAM</p>
+                        <Heading>Get a full year of Brease — free.</Heading>
                     </div>
 
                     <div className="mt-[24px] md:mt-[40px] lg:mt-auto">
-                        <p className="text-h5-mobile leading-h5-mobile md:text-h5-tablet md:leading-h5-tablet lg:text-h5-desktop lg:leading-h5-desktop text-black mb-[16px]">We’re inviting select dev studios to join our beta program.<br></br><br></br>You’ll get:</p>
+                        <p className="font-rale-grotesk-base-medium text-h5-mobile leading-h5-mobile md:text-h5-tablet md:leading-h5-tablet lg:text-h5-desktop lg:leading-h5-desktop text-black mb-[16px]">We’re inviting select dev studios to join our beta program.<br></br><br></br>You’ll get:</p>
                         <ul className="translate-x-5 list-disc font-abc-diatype-regular text-md-mobile leading-md-mobile md:text-md-tablet md:leading-md-tablet lg:text-md-desktop lg:leading-md-desktop text-subtext mb-[32px]">
                             <li>Full access to Brease Pro for 12 months</li>
                             <li>Priority support & direct product input</li>
                             <li>A say in shaping the future of content management</li>
                         </ul>
-                        <p style={{ backgroundImage: "linear-gradient(20deg, #D8ABFF 25%, #005244 40%"}} className="bg-clip-text text-transparent text-h5-desktop leading-h5-desktop md:text-h5-tablet md:leading-h5-tablet lg:text-h5-desktop lg:leading-h5-desktop mb-[32px]">This is not a trial. It’s your new stack — early.</p>
+                        <p style={{ backgroundImage: "linear-gradient(10deg, #D8ABFF 25%, #005244 50%"}} className="font-rale-grotesk-base-medium bg-clip-text text-transparent text-h5-desktop leading-h5-desktop md:text-h5-tablet md:leading-h5-tablet lg:text-h5-desktop lg:leading-h5-desktop mb-[32px]">This is not a trial. It’s your new stack — early.</p>
                         <Button color="black" type="primary" arrow={true}>Apply for Early Access</Button>
                     </div>
                 </div>

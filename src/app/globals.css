@@ -15,26 +15,64 @@
   src: url("/fonts/abc-diatype-medium.otf");
 }
 
-body{
+@font-face {
+  font-family: "rale-grotesk-base-bold";
+  src: url("/fonts/RaleGroteskBase-Bold.ttf");
+}
+
+@font-face {
+  font-family: "rale-grotesk-base-regular";
+  src: url("/fonts/RaleGroteskBase-Regular.ttf");
+}
+
+@font-face {
+  font-family: "rale-grotesk-base-medium";
+  src: url("/fonts/RaleGroteskBase-Medium.ttf");
+}
+
+@font-face {
+  font-family: "rale-grotesk-base-semibold";
+  src: url("/fonts/RaleGroteskBase-SemiBold.ttf");
+}
+
+html{
   overflow-x: hidden;
+}
+
+.line {
+  display: block;
+  background: linear-gradient(to right, #8A2BE2, #8A2BE2);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 @theme {
   --color-primary: #005244;
+  --color-primary-footer: #E2F8EE;
   --color-background: #f2f2f2;
   --color-purple: #D8ABFF;
   --color-showcaseborder: #DEDEDE;
   --color-sublabel: #8B8B8B;
   --color-heading: #121212;
+  --color-background-dark: #121212;
   --color-subtext: #616161;
 
   --font-abc-diatype-bold: "abc-diatype-bold";
   --font-abc-diatype-regular: "abc-diatype-regular";
   --font-abc-diatype-medium: "abc-diatype-medium";
 
+  --font-rale-grotesk-base-bold: "rale-grotesk-base-bold";
+  --font-rale-grotesk-base-semibold: "rale-grotesk-base-semibold";
+  --font-rale-grotesk-base-regular: "rale-grotesk-base-regular";
+  --font-rale-grotesk-base-medium: "rale-grotesk-base-medium";
+
   --breakpoint-xl: 1930px;
   --breakpoint-lg: 1440px;
-  --breakpoint-md: 924px;
+  --breakpoint-md: 976px;
 
   --rounded-md: 12px;
 

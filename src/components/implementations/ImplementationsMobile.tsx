@@ -2,10 +2,10 @@ export default function ImplementationsMobile() {
     return (
         <div className="flex flex-col w-full px-[24px] pb-[80px] lg:pb-[120px] bg-background">
 
-            <p className="font-abc-diatype-medium text-xs-mobile md:text-xs-tablet lg:text-xs-desktop mb-[8px] text-sublabel">IMPLEMENTATIONS</p>
-            <p className="text-h2-mobile leading-h2-mobile md:text-h2-tablet md:leading-h2-tablet lg:text-h2-desktop lg:leading-h2-desktop text-heading tracking-[-1px] mb-[24px]">Powerful features that set us apart</p>
+            <p className="font-abc-diatype-bold text-xs-mobile md:text-xs-tablet lg:text-xs-desktop mb-[8px] text-sublabel">IMPLEMENTATIONS</p>
+            <p className="font-rale-grotesk-base-medium text-h2-mobile leading-h2-mobile md:text-h2-tablet md:leading-h2-tablet lg:text-h2-desktop lg:leading-h2-desktop text-heading tracking-[-1px] mb-[24px]">Powerful features that set us apart</p>
 
-            <p className="text-heading text-h5-mobile leading-h5-desktop md:text-h5-tablet  lg:text-h5-desktop mb-[48px]"><b>AI Assistant That Does, Not Just Suggests</b> Forget simple content prompts — Brease’s AI takes action.Create entire pages, update sections, or restructure layouts just by asking. It understands your design rules and executes updates without you digging through content trees or nested settings.</p>
+            <p className="font-rale-grotesk-base-regular text-heading text-h5-mobile leading-h5-desktop md:text-h5-tablet lg:text-h5-desktop mb-[48px]"><b>AI Assistant That Does, Not Just Suggests</b> Forget simple content prompts — Brease’s AI takes action.Create entire pages, update sections, or restructure layouts just by asking. It understands your design rules and executes updates without you digging through content trees or nested settings.</p>
 
             <div className="relative w-full h-[357px] bg-primary p-[40px] overflow-hidden mb-[32px]">
                 <svg className={`absolute w-[790px] h-[1100px] fill-purple z-1 -rotate-[25deg] right-0 -top-[35%]`} viewBox="0 0 23 30">
@@ -17,25 +17,25 @@ export default function ImplementationsMobile() {
 
             <div className="flex flex-col gap-[24px]">
                 <div className="flex flex-col">
-                    <p className="text-h5-mobile leading-h5-mobile md:text-h5-tablet md:leading-h5-tablet lg:text-h5-desktop lg:leading-h5-desktop text-heading mb-[12px]">Reusable Sections, Built to Scale</p>
-                    <p className="text-md-desktop leading-md-desktop text-subtext"><b>Design once. Use forever.</b>
+                    <p className="font-rale-grotesk-base-semibold text-h5-mobile leading-h5-mobile md:text-h5-tablet md:leading-h5-tablet lg:text-h5-desktop lg:leading-h5-desktop text-heading mb-[12px]">Reusable Sections, Built to Scale</p>
+                    <p className="font-abc-diatype-regular text-md-desktop leading-md-desktop text-subtext"><b>Design once. Use forever.</b>
                     <br></br><br></br>Turn custom React components into modular, editor-friendly sections that can be reused, reordered, and adapted across pages with zero dev time.</p>
                 </div>
                 
                 {/* divider */}
                 <div className="w-full bg-[#DDDDDD] h-[1px]"></div>
 
-                <p className="text-h5-mobile leading-h5-mobile md:text-h5-tablet md:leading-h5-tablet lg:text-h5-desktop lg:leading-h5-desktop text-subtext">Built for Content Editors</p>
+                <p className="font-rale-grotesk-base-semibold text-h5-mobile leading-h5-mobile md:text-h5-tablet md:leading-h5-tablet lg:text-h5-desktop lg:leading-h5-desktop text-subtext">Built for Content Editors</p>
 
                 {/* divider */}
                 <div className="w-full bg-[#DDDDDD] h-[1px]"></div>
 
-                <p className="text-h5-mobile leading-h5-mobile md:text-h5-tablet md:leading-h5-tablet lg:text-h5-desktop lg:leading-h5-desktop text-subtext">Unlimited Content Models</p>
+                <p className="font-rale-grotesk-base-semibold text-h5-mobile leading-h5-mobile md:text-h5-tablet md:leading-h5-tablet lg:text-h5-desktop lg:leading-h5-desktop text-subtext">Unlimited Content Models</p>
 
                 {/* divider */}
                 <div className="w-full bg-[#DDDDDD] h-[1px]"></div>
 
-                <p className="text-h5-mobile leading-h5-mobile md:text-h5-tablet md:leading-h5-tablet lg:text-h5-desktop lg:leading-h5-desktop text-subtext">Developer-Minded by Design</p>
+                <p className="font-rale-grotesk-base-semibold text-h5-mobile leading-h5-mobile md:text-h5-tablet md:leading-h5-tablet lg:text-h5-desktop lg:leading-h5-desktop text-subtext">Developer-Minded by Design</p>
             </div>
         </div>
     )
