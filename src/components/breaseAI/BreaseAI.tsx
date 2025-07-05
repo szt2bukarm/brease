@@ -44,9 +44,9 @@ export default function BreaseAI() {
             <div className="relative z-1 p-[24px] md:p-[40px] bg-white md:min-h-[512px] shadow-[0_56px_112px_-20px_rgba(62,52,69,0.18)] overflow-hidden">
 
                 {/* left col */}
-                <div className="relative flex flex-col items-start w-full mb-[48px] md:mb-0 md:w-[35%] min-h-[432px] z-1">
+                <div className="relative flex flex-col items-start w-full mb-[48px] md:mb-0 md:w-[35%] md:min-h-[432px] z-1">
                     <p className="font-abc-diatype-bold text-xs-mobile md:text-xs-tablet lg:text-xs-desktop mb-[8px] text-sublabel">BREASE AI</p>
-                    <div className="mb-auto">
+                    <div className="md:mb-auto">
                     <Heading>AI That Builds, Not Just Talks</Heading>
                     </div>
                     <p className="font-abc-diatype-regular text-heading text-h5-mobile leading-h5-desktop md:text-h5-tablet lg:text-h5-desktop mb-[34px]"><b>The Brease Assistant doesn’t just suggest — it acts.</b> From creating entire sections to updating content in context, it gets the job done while staying true to your design system.</p>

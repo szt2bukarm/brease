@@ -6,7 +6,7 @@ export default function Hero() {
             <div className="px-[24px] md:px-[64px] lg:px-[11vw] pt-[112px] md:pt-[152px] flex md:flex-row flex-col justify-between">
 
                 <div className="flex flex-col gap-[32px] md:gap-[40px] mb-[40px] md:mb-[80px]">
-                    <h1 className="text-white text-h1-mobile leading-h1-mobile md:text-[5vw] md:leading-[5vw] lg:text-[4.5vw] lg:leading-[4.5vw] tracking-[-1px] font-rale-grotesk-base-medium md:max-w-[692px] lg:max-w-[914px] xl:max-w-[80%]">Rethinking Simplicity in Content Management</h1>
+                    <h1 className="text-white text-h1-mobile leading-h1-mobile md:text-[4.82vw] md:leading-[4.82vw] lg:text-[4.5vw] lg:leading-[4.5vw] tracking-[-1px] font-rale-grotesk-base-medium md:max-w-[692px] lg:max-w-[914px] xl:max-w-[80%]">Rethinking Simplicity in Content Management</h1>
                     <div className="flex gap-[12px]">
                         <Button color="white" type="primary" arrow={true}>Getting Started</Button>
                         <Button color="opaque-to-white" type="secondary" arrow={false}>Learn More</Button>

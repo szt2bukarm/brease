@@ -33,7 +33,7 @@ export default function BreaseKit() {
                 <div className="px-[24px] md:px-[64px] lg:px-[80px] py-[64px] flex flex-col min-h-full md:w-1/2 lg:w-full">
 
                     <div className="p-[8px] w-[48px] h-[48px] rounded-[12px] flex items-center justify-center shadow-[0px_1px_5px_rgba(62,52,69,0.2)] mb-[24px]">
-                        <p className="font-abc-diatype-bold text-[22px] bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(130deg, #005244 40%,#D8ABFF 65%)"}}>1.0</p>
+                        <p className="font-abc-diatype-bold text-[24px] translate-x-[0.5px] bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(130deg, #005244 40%,#D8ABFF 65%)"}}>1.0</p>
                     </div>
 
                     <div className="w-full flex flex-wrap gap-x-[8px] lg:gap-x-[10px] mb-[16px]">
