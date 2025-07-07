@@ -12,7 +12,7 @@ export default function Heading({children}: Readonly<{children: React.ReactNode}
         gsap.set(split.words, {opacity: 0})
         gsap.fromTo(split.words,
              {opacity: 0, filter: "blur(10px)"},
-             {opacity: 1, filter: "blur(0px)", duration: 1.5, stagger: 0.1, ease:"power4.out",
+             {opacity: 1, filter: "blur(0px)", duration: 1.75, stagger: 0.075, ease:"power4.out",
             scrollTrigger: {
                 trigger: headingRef.current,
                 start: "top 70%",
