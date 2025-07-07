@@ -62,7 +62,7 @@ export default function Fullstack() {
                 const cardsVisible = Math.floor(wrapperWidth / cardWidth);
                 setVisibleCards(prevVisibleCards => {
                     const maxScroll = cards.length - cardsVisible;
-                    setCurrentScroll(prevScroll => Math.min(prevScroll, 0, maxScroll));
+                    setCurrentScroll(prevScroll => Math.min(prevScroll, maxScroll));
                     return cardsVisible;
                 });
             }
