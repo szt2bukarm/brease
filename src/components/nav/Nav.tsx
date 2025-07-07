@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../common/Button";
 import NavDropdown from "./NavDropdown";
 import NavMobileButton from "./NavMobileButton";
@@ -8,6 +8,20 @@ import NavThemeSwitcher from "./NavThemeSwitcher";
 export default function Nav() {
     // mobile nav open state
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth > 1100) {
+                setIsOpen(false);
+            }
+        }
+
+        window.addEventListener("resize", handleResize)
+
+        return () => {
+            window.removeEventListener("resize", handleResize)
+        }
+    },[])
 
     const handleOpen = () => {
         setIsOpen(!isOpen);

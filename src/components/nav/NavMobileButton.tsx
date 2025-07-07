@@ -11,44 +11,44 @@ export default function NavMobileButton({opened,onClick} : {
     const openAnim = () => {
         gsap.to(hambugerRef.current[0], {
             y: 2.5,
-            duration: 0.1
+            duration: 0.03,
         })
         gsap.to(hambugerRef.current[1], {
             y: -2.5,
-            duration: 0.1
+            duration: 0.03,
         })
 
         gsap.to(hambugerRef.current[0], {
             rotate: 45,
-            duration: 0.1,
-            delay: 0.1
+            duration: 0.03,
+            delay: 0.03
         })
         gsap.to(hambugerRef.current[1], {
             rotate: -45,
-            duration: 0.1,
-            delay: 0.1
+            duration: 0.03,
+            delay: 0.03
         })
     }
 
     const closeAnim = () => {
         gsap.to(hambugerRef.current[0], {
             rotate: 0,
-            duration: 0.1
+            duration: 0.03
         })
         gsap.to(hambugerRef.current[1], {
             rotate: 0,
-            duration: 0.1
+            duration: 0.03
         })
 
         gsap.to(hambugerRef.current[0], {
             y: 0,
-            duration: 0.1,
-            delay: 0.1
+            duration: 0.03,
+            delay: 0.03
         })
         gsap.to(hambugerRef.current[1], {
             y: 0,
-            duration: 0.1,
-            delay: 0.1
+            duration: 0.03,
+            delay: 0.03
         })
     }
 

@@ -10,6 +10,7 @@ import Showcase from "@/components/showcase/Showcase";
 import JoinBeta from "@/components/joinbeta/JoinBeta";
 import BreaseKit from "@/components/breasekit/BreaseKit";
 import Footer from "@/components/footer/Footer";
+import BottomWrapper from "@/components/BottomWrapper";
 
 export default function Home() {
   return (
@@ -22,8 +23,7 @@ export default function Home() {
       <Fullstack />
       <FeatureRequest />
       <Showcase />
-      <JoinBeta />
-      <BreaseKit />
+      <BottomWrapper />
     </main>
     <Footer />
     </>

@@ -40,6 +40,10 @@ html{
   scrollbar-gutter: stable;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 img {
   -webkit-user-drag: none;
   -khtml-user-drag: none;
