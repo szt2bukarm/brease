@@ -43,9 +43,9 @@ export default function Fullstack() {
     const innerRef = useRef<HTMLDivElement>(null);    // card container
 
     const [currentScroll, setCurrentScroll] = useState(0);
+    const [visibleCards, setVisibleCards] = useState(1);
     const [disableLeft, setDisableLeft] = useState(true);
     const [disableRight, setDisableRight] = useState(false);
-    
     const [disableDrag, setDisableDrag] = useState(false);
 
     // Drag refs
@@ -54,8 +54,28 @@ export default function Fullstack() {
     const dragThreshold = 100; // px
     const cardWidth = 440;
 
+    // visible card count
+    useEffect(() => {
+        const updateVisibleCards = () => {
+            if (wrapperRef.current) {
+                const wrapperWidth = window.innerWidth-50; // 100vw - (gap + 10px)
+                const cardsVisible = Math.floor(wrapperWidth / cardWidth);
+                setVisibleCards(prevVisibleCards => {
+                    const maxScroll = cards.length - cardsVisible;
+                    setCurrentScroll(prevScroll => Math.min(prevScroll, 0, maxScroll));
+                    return cardsVisible;
+                });
+            }
+        };
+    
+        updateVisibleCards();
+        window.addEventListener("resize", updateVisibleCards);
+        return () => window.removeEventListener("resize", updateVisibleCards);
+    }, []);
+
     const moveLeft = () => {
-        if (currentScroll < cards.length - 1) {
+        const maxScroll = cards.length - visibleCards;
+        if (currentScroll < maxScroll) {
             setCurrentScroll(prev => prev + 1);
         }
     };
@@ -67,8 +87,10 @@ export default function Fullstack() {
     };
 
     useEffect(() => {
+        const maxScroll = cards.length - visibleCards;
+
         setDisableLeft(currentScroll === 0);
-        setDisableRight(currentScroll === cards.length - 1);
+        setDisableRight(currentScroll >= maxScroll);
 
         setDisableDrag(true);
         gsap.to(innerRef.current, {
@@ -76,7 +98,7 @@ export default function Fullstack() {
             duration: 0.25,
             onComplete: () => setDisableDrag(false),
         });
-    }, [currentScroll]);
+    }, [currentScroll, visibleCards]);
 
     const dragStart = (e: React.MouseEvent) => {
         if (disableDrag) return;
@@ -95,30 +117,28 @@ export default function Fullstack() {
         });
     };
 
-    const dragEnd = (e: React.MouseEvent) => {
-        if (!isDragging.current) return;
+const dragEnd = (e: React.MouseEvent) => {
+    if (!isDragging.current) return;
 
-        const delta = e.clientX - startX.current;
-        isDragging.current = false;
+    const delta = e.clientX - startX.current;
+    isDragging.current = false;
 
-        if (Math.abs(delta) > dragThreshold) {
-            const movedCards = Math.max(1, Math.floor(Math.abs(delta) / cardWidth));
-            
-            if (delta > 0 && currentScroll > 0) {
-                const newScroll = Math.max(0, currentScroll - movedCards);
-                setCurrentScroll(newScroll);
-            } else if (delta < 0 && currentScroll < cards.length - 1) {
-                const newScroll = Math.min(cards.length - 1, currentScroll + movedCards);
-                setCurrentScroll(newScroll);
-            } else {
-                setDisableDrag(true);
-                gsap.to(innerRef.current, {
-                    x: currentScroll * -cardWidth,
-                    duration: 0.25,
-                    onComplete: () => setDisableDrag(false),
-                });
-            }
+    const maxScroll = cards.length - visibleCards;
+
+    if (Math.abs(delta) > dragThreshold) {
+        const movedCards = Math.max(1, Math.floor(Math.abs(delta) / cardWidth));
+        let newScroll = currentScroll;
+
+        if (delta > 0 && currentScroll > 0) {
+            newScroll = Math.max(0, currentScroll - movedCards);
+        } else if (delta < 0 && currentScroll < maxScroll) {
+            newScroll = Math.min(maxScroll, currentScroll + movedCards);
+        }
+
+        if (newScroll !== currentScroll) {
+            setCurrentScroll(newScroll);
         } else {
+            // Snap back because we're at the edge
             setDisableDrag(true);
             gsap.to(innerRef.current, {
                 x: currentScroll * -cardWidth,
@@ -126,7 +146,17 @@ export default function Fullstack() {
                 onComplete: () => setDisableDrag(false),
             });
         }
-    };
+    } else {
+        // Small drag, just snap back
+        setDisableDrag(true);
+        gsap.to(innerRef.current, {
+            x: currentScroll * -cardWidth,
+            duration: 0.25,
+            onComplete: () => setDisableDrag(false),
+        });
+    }
+};
+
 
     return (
         <div className="flex flex-col gap-[64px] px-[24px] md:px-[90px] lg:px-[11vw] pb-[80px] lg:pb-[120px] overflow-hidden select-none">
@@ -146,7 +176,7 @@ export default function Fullstack() {
                 </div>
             </div>
 
-            {/* WRAPPER with event listeners */}
+            {/* wrapper with event listeners */}
             <div
                 ref={wrapperRef}
                 className="hidden cursor-grab active:cursor-grabbing md:block"
@@ -155,7 +185,7 @@ export default function Fullstack() {
                 onMouseUp={dragEnd}
                 onMouseLeave={dragEnd}
             >
-                {/* MOVED INNER CONTAINER */}
+                {/* transformed inner container */}
                 <div ref={innerRef} className="flex gap-[40px] ">
                     {cards.map((card, index) => (
                         <FullstackCard key={index} image={card.image} title={card.title} subtext={card.subtext} />
@@ -163,7 +193,7 @@ export default function Fullstack() {
                 </div>
             </div>
 
-            {/* MOBILE CARDS */}
+            {/* mobile slider */}
             <div className="flex md:hidden gap-[40px] overflow-x-scroll">
                 {cards.map((card, index) => (
                     <FullstackCard key={index} image={card.image} title={card.title} subtext={card.subtext} />
