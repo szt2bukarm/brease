@@ -21,7 +21,6 @@ export default function BreaseAI() {
             start: "-200% top",
             end: "bottom+=200% top",
             scrub: true,
-            markers: true,
             animation: timeline
         })
 
