@@ -52,17 +52,18 @@ export default function Fullstack() {
     const startX = useRef(0);
     const isDragging = useRef(false);
     const dragThreshold = 100; // px
-    const cardWidth = 440;
+    const cardWidth = 440; // px
 
     // visible card count
     useEffect(() => {
         const updateVisibleCards = () => {
             if (wrapperRef.current) {
-                const wrapperWidth = window.innerWidth-50; // 100vw - (gap + 10px)
-                const cardsVisible = Math.floor(wrapperWidth / cardWidth);
+                const wrapperWidth = window.innerWidth - 50; // 100vw - (gap + 10px to account for scrollbar width issue)
+                const cardsVisible = Math.floor(wrapperWidth / (cardWidth+30)); // +30px to safeguard last card from being clipped
+                console.log(cardsVisible)
                 setVisibleCards(prevVisibleCards => {
                     const maxScroll = cards.length - cardsVisible;
-                    setCurrentScroll(prevScroll => Math.min(prevScroll, maxScroll));
+                    setCurrentScroll(prevScroll => Math.min(prevScroll, Math.max(0, maxScroll)));
                     return cardsVisible;
                 });
             }
@@ -117,50 +118,42 @@ export default function Fullstack() {
         });
     };
 
-const dragEnd = (e: React.MouseEvent) => {
-    if (!isDragging.current) return;
+    const dragEnd = (e: React.MouseEvent) => {
+        if (!isDragging.current) return;
 
-    const delta = e.clientX - startX.current;
-    isDragging.current = false;
+        const delta = e.clientX - startX.current;
+        isDragging.current = false;
 
-    const maxScroll = cards.length - visibleCards;
+        const maxScroll = cards.length - visibleCards;
 
-    if (Math.abs(delta) > dragThreshold) {
-        const movedCards = Math.max(1, Math.floor(Math.abs(delta) / cardWidth));
-        let newScroll = currentScroll;
+        if (Math.abs(delta) > dragThreshold) {
+            const movedCards = Math.max(1, Math.floor(Math.abs(delta) / cardWidth));
+            let newScroll = currentScroll;
 
-        if (delta > 0 && currentScroll > 0) {
-            newScroll = Math.max(0, currentScroll - movedCards);
-        } else if (delta < 0 && currentScroll < maxScroll) {
-            newScroll = Math.min(maxScroll, currentScroll + movedCards);
+            if (delta > 0 && currentScroll > 0) {
+                newScroll = Math.max(0, currentScroll - movedCards);
+            } else if (delta < 0 && currentScroll < maxScroll) {
+                newScroll = Math.min(maxScroll, currentScroll + movedCards);
+            }
+
+            if (newScroll !== currentScroll) {
+                setCurrentScroll(newScroll);
+            } 
         }
-
-        if (newScroll !== currentScroll) {
-            setCurrentScroll(newScroll);
-        } else {
-            // Snap back because we're at the edge
-            setDisableDrag(true);
-            gsap.to(innerRef.current, {
-                x: currentScroll * -cardWidth,
-                duration: 0.25,
-                onComplete: () => setDisableDrag(false),
-            });
-        }
-    } else {
-        // Small drag, just snap back
+        
+        // snap back
         setDisableDrag(true);
         gsap.to(innerRef.current, {
             x: currentScroll * -cardWidth,
             duration: 0.25,
             onComplete: () => setDisableDrag(false),
         });
-    }
-};
+    };
 
 
     return (
-        <div className="flex flex-col gap-[64px] px-[24px] md:px-[90px] lg:px-[11vw] pb-[80px] lg:pb-[120px] overflow-hidden select-none">
-            <div className="flex flex-col md:flex-row gap-[32px] md:gap-[80px] lg:gap-0">
+        <div className="flex flex-col gap-[64px] pb-[80px] lg:pb-[120px] overflow-hidden select-none">
+            <div className="flex flex-col md:flex-row gap-[32px] md:gap-[80px] lg:gap-0 px-[24px] md:px-[90px] lg:px-[11vw]">
                 <div className="w-full">
                     <p className="font-abc-diatype-bold text-xs-mobile md:text-xs-tablet lg:text-xs-desktop mb-[8px] text-sublabel">
                         FULL STACK
@@ -179,7 +172,7 @@ const dragEnd = (e: React.MouseEvent) => {
             {/* wrapper with event listeners */}
             <div
                 ref={wrapperRef}
-                className="hidden cursor-grab active:cursor-grabbing md:block"
+                className="box-border hidden cursor-grab active:cursor-grabbing md:block px-[24px] md:px-[90px] lg:px-[11vw]"
                 onMouseDown={dragStart}
                 onMouseMove={dragMove}
                 onMouseUp={dragEnd}
@@ -194,7 +187,7 @@ const dragEnd = (e: React.MouseEvent) => {
             </div>
 
             {/* mobile slider */}
-            <div className="flex md:hidden gap-[40px] overflow-x-scroll">
+            <div className="flex md:hidden gap-[24px] overflow-x-scroll px-[24px] md:px-[90px] lg:px-[11vw]">
                 {cards.map((card, index) => (
                     <FullstackCard key={index} image={card.image} title={card.title} subtext={card.subtext} />
                 ))}

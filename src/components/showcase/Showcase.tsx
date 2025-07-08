@@ -18,8 +18,8 @@ export default function Showcase() {
 
             <div className="px-[24px] md:px-[90px] lg:px-[11vw]">
 
-                <div className="p-[1px] rounded-[7px] md:rounded-[10px] lg:rounded-[13px] bg-gradient-to-b from-[#EBECF0] to-[#D9DCE4]">
-                    <img src="/BothWorldsCards/1.png" className="w-full rounded-[8px] shadow-[0_40px_80px_-16px_rgba(62,52,69,0.16)]" />
+                <div className="p-[1px] rounded-[13px] md:rounded-[12px] bg-gradient-to-b from-[#EBECF0] to-[#D9DCE4] overflow-hidden">
+                    <img src="/BothWorldsCards/1.png" className="w-full rounded-[12px] shadow-[0_40px_80px_-16px_rgba(62,52,69,0.16)]" />
                 </div>
             </div>
 

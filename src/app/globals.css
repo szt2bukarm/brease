@@ -85,6 +85,7 @@ img {
   --breakpoint-xl: 1930px;
   --breakpoint-lg: 1440px;
   --breakpoint-md: 1100px;
+  --breakpoint-sm: 768px;
 
   --rounded-md: 12px;
 
