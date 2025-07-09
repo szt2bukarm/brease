@@ -58,7 +58,7 @@ export default function Implementations({sections,openedSectionTitle, handleSele
                     {/* <img src="/ImplementationsCards/1.png" className="z-2 w-[85%] max-w-[630px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-93%] shadow-[0_56px_112px_rgba(62,52,69,0.18)]"/>
                     <img src="/ImplementationsCards/2.png" className="z-1 w-[80%] max-w-[600px] absolute top-[50%] left-[50%] translate-x-[-50%] -translate-y-[56%] [clip-path:polygon(0_50%,100%_50%,100%_100%,0%_100%)]" /> */}
 
-                    <AIPromptCard scaleVariant={1} emptyInput={true}/>
+                    <AIPromptCard scaleVariant={1} emptyInput={true} showTabUnder={true}/>
                 </div>
             </div>
 
