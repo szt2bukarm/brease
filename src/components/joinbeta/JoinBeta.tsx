@@ -8,7 +8,7 @@ export default function JoinBeta() {
         <div className="relative px-[24px] md:px-[90px] lg:px-[11vw] py-[88px] bg-background">
             <div className="z-1 relative w-full flex flex-col md:flex-row gap-[40px] md:gap-[80px] lg:min-h-[608px]">
 
-                <div className="p-[1px] h-[300px] w-full md:w-[50vw] md:h-[33vw] md:max-h-[608px] lg:max-h-none lg:h-[608px] lg:w-[900px] rounded-[13px] md:rounded-[12px] bg-gradient-to-b from-[#EBECF0] to-[#D9DCE4] overflow-hidden">
+                <div className="p-[1px] min-h-[300px] h-[50vw] w-full md:w-[50vw] md:h-[33vw] md:max-h-[608px] lg:max-h-none lg:h-[608px] lg:w-[900px] rounded-[13px] md:rounded-[12px] bg-gradient-to-b from-[#EBECF0] to-[#D9DCE4] overflow-hidden">
                     <img src="/BothWorldsCards/1.png" className="object-cover h-full w-full object-left shadow-[0_40px_80px_-16px_rgba(62,52,69,0.16)] rounded-[12px]" />
                 </div>
 

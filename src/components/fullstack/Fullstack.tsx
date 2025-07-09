@@ -60,7 +60,6 @@ export default function Fullstack() {
             if (wrapperRef.current) {
                 const wrapperWidth = window.innerWidth - 50; // 100vw - (gap + 10px to account for scrollbar width issue)
                 const cardsVisible = Math.floor(wrapperWidth / (cardWidth+30)); // +30px to safeguard last card from being clipped
-                console.log(cardsVisible)
                 setVisibleCards(prevVisibleCards => {
                     const maxScroll = cards.length - cardsVisible;
                     setCurrentScroll(prevScroll => Math.min(prevScroll, Math.max(0, maxScroll)));
@@ -163,7 +162,7 @@ export default function Fullstack() {
                         Brease merges sleek design with powerful functionality, making content management not just efficient, but intuitively simple.
                     </p>
                 </div>
-                <div className="hidden flex mt-auto gap-[12px] md:flex">
+                <div className="hidden mt-auto gap-[12px] md:flex">
                     <Button disabled={disableLeft} onClick={moveRight} color="black" type="primary" arrow={true} leftArrow={true} />
                     <Button disabled={disableRight} onClick={moveLeft} color="black" type="primary" arrow={true} />
                 </div>
