@@ -1,6 +1,6 @@
 export default function FullstackCard({image,title,subtext}: {image : string, title : string, subtext : string}) {
     return (
-        <div className="flex flex-col gap-[24px] min-w-[400px]">
+        <div className="flex flex-col gap-[24px] w-full">
 
             <img src={`FullStackCards/${image}`} className="w-full" />
 
